@@ -1,5 +1,6 @@
 var transcript = "";
 var recognition = new webkitSpeechRecognition();
+var startup = /b(a|e)y( )?max( |$)/
 setUpRecognition = function() {
 	//recognition.continuous = false;
 	//recognition.interimResults = false;
@@ -7,9 +8,9 @@ setUpRecognition = function() {
 		console.log("recognition started");
 	}
 	recognition.onresult = function(event) {
-		result = event.results[event.results.length-1][0].transcript
-		transcript = result;
-		if (transcript) {
+		transcript = event.results[event.results.length-1][0].transcript
+		isSleeping = isSleeping ? !startup.test(transcript) : false 
+		if (transcript && !isSleeping) {
 			startBeep.play();
 			console.log("Sending to server: " + transcript);
 			if ( /(localhost|runpengliu)/.test(location.href) ) {
