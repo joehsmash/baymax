@@ -10,6 +10,8 @@ var baymaxWindow = new Audio('sounds/window.mp3');
 var hairyBaby = new Audio('sounds/hairybaby.mp3');
 endBeep.volume = 0.6;
 startBeep.volume = 0.6;
+var accent = 0;
+var pitch = 0.60;
 var beeps = [startBeep, endBeep];
 var longPause = 2000;
 var previousResponse = {};
@@ -33,10 +35,10 @@ var speak = function(phrase, followup, command) {
     if (!first || first.length > 250) {
         return;
     }
-    BAYMAX.voice = speechSynthesis.getVoices()[0];
+    BAYMAX.voice = speechSynthesis.getVoices()[accent || 0];
     BAYMAX.text = first;
     BAYMAX.volume = 10;
-    BAYMAX.pitch = 0.58;
+    BAYMAX.pitch = pitch || 0.60;
     BAYMAX.rate = 0.98;
     if ( first.indexOf("window") > -1 ) {
         BAYMAX.volume = 0;
@@ -93,6 +95,11 @@ nigelRef.on("value", function(ss) {
 });
 
 var processResponse = function(result) {
+    if (result.cmd.voice) {
+        accent = (result.cmd.voice == "british") ? 2 : (result.cmd.voice == "spanish") ? 3 : (result.cmd.voice == "french") ? 4 : 0;
+    } else {
+        accent = 0;
+    }
     if (result.res && https && !isSleeping) {
         speak(result.res, result.followup);
     }
