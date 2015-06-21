@@ -2932,10 +2932,10 @@ only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolu
 }
 .image_b_icon_hero_baymax {
     background-repeat: no-repeat;
-    background-size: 200px 200px;
-    height: 200px;
-    width: 200px;
-    background-image: url("../images/hero_baymax_square.png");
+    background-size: 240px 180px;
+    height: 180px;
+    width: 240px;
+    background-image: url("../images/baymax_eyes.gif");
     margin-left: auto;
     margin-right: auto
 }
@@ -2943,37 +2943,37 @@ only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolu
 (min-resolution: 144dpi),
 (min-resolution: 144dppx) {
     .image_b_icon_hero_baymax {
-        background-image: url("../images/hero_baymax_square.png")
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 @media only screen and (max-width: 1068px) {
     .image_b_icon_hero_baymax {
-        background-size: 100px 100px;
-        height: 100px;
-        width: 100px;
-        background-image: url("../images/hero_baymax_square.png")
+        background-size: 120px 90px;
+        height: 90px;
+        width: 120px;
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 @media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (max-width: 1068px) and (min-resolution: 144dpi),
 only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
     .image_b_icon_hero_baymax {
-        background-image: url("../images/hero_baymax_square.png")
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 @media only screen and (max-width: 735px) and (max-device-width: 768px) {
     .image_b_icon_hero_baymax {
-        background-size: 80px 80px;
-        height: 80px;
-        width: 80px;
-        background-image: url("../images/hero_baymax_square.png")
+        background-size: 100px 75px;
+        height: 75px;
+        width: 100px;
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 @media only screen and (max-width: 735px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolution: 144dpi),
 only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolution: 144dppx) {
     .image_b_icon_hero_baymax {
-        background-image: url("../images/hero_baymax_square.png")
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 .image_b_icon_tile_appstore {
@@ -4936,11 +4936,11 @@ html.oldie .large-12 {
 .section-hero {
     max-width: 100%;
     padding-top: 46px;
-    color: #fff;
+    color: #000;
     text-align: center;
     overflow: hidden;
     z-index: 1001;
-    background-color: #7d7d7d
+    background-color: rgb(232, 236, 237, 1);
 }
 html.oldie .section-hero {
     width: 1024px;
@@ -5636,7 +5636,7 @@ html.oldie .categorynav-wrapper {
 .categorynav-wrapper.locked ~ .section-gridwrapper {
     -webkit-transform: none;
     -ms-transform: none;
-    transform: none
+    transform: none 
 }
 .no-ios8.touch .categorynav-wrapper {
     position: -webkit-sticky;

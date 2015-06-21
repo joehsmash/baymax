@@ -2932,10 +2932,10 @@ only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolu
 }
 .image_b_icon_hero_baymax {
     background-repeat: no-repeat;
-    background-size: 60px 62px;
-    height: 62px;
-    width: 60px;
-    background-image: url("https://s-media-cache-ak0.pinimg.com/236x/fd/68/38/fd683889fbc9e8d6d0563da8754be79a.jpg");
+    background-size: 80px 60px;
+    height: 60px;
+    width: 80px;
+    background-image: url("../images/baymax_eyes.gif");
     margin-left: auto;
     margin-right: auto
 }
@@ -2943,37 +2943,37 @@ only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolu
 (min-resolution: 144dpi),
 (min-resolution: 144dppx) {
     .image_b_icon_hero_baymax {
-        background-image: url("https://s-media-cache-ak0.pinimg.com/236x/fd/68/38/fd683889fbc9e8d6d0563da8754be79a.jpg")
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 @media only screen and (max-width: 1068px) {
     .image_b_icon_hero_baymax {
-        background-size: 48px 48px;
-        height: 48px;
-        width: 48px;
-        background-image: url("https://s-media-cache-ak0.pinimg.com/236x/fd/68/38/fd683889fbc9e8d6d0563da8754be79a.jpg")
+        background-size: 60px 45px;
+        height: 45px;
+        width: 60px;
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 @media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (max-width: 1068px) and (min-resolution: 144dpi),
 only screen and (max-width: 1068px) and (min-resolution: 144dppx) {
     .image_b_icon_hero_baymax {
-        background-image: url("https://s-media-cache-ak0.pinimg.com/236x/fd/68/38/fd683889fbc9e8d6d0563da8754be79a.jpg")
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 @media only screen and (max-width: 735px) and (max-device-width: 768px) {
     .image_b_icon_hero_baymax {
-        background-size: 66px 66px;
-        height: 66px;
-        width: 66px;
-        background-image: url("https://s-media-cache-ak0.pinimg.com/236x/fd/68/38/fd683889fbc9e8d6d0563da8754be79a.jpg")
+        background-size: 80px 60px;
+        height: 60px;
+        width: 80px;
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 @media only screen and (max-width: 735px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolution: 144dpi),
 only screen and (max-width: 735px) and (max-device-width: 768px) and (min-resolution: 144dppx) {
     .image_b_icon_hero_baymax {
-        background-image: url("https://s-media-cache-ak0.pinimg.com/236x/fd/68/38/fd683889fbc9e8d6d0563da8754be79a.jpg")
+        background-image: url("../images/baymax_eyes.gif")
     }
 }
 .image_b_icon_tile_appstore {
@@ -4931,11 +4931,11 @@ html.oldie .large-12 {
 .section-hero {
     max-width: 100%;
     padding-top: 46px;
-    color: #fff;
+    color: #000;
     text-align: center;
     overflow: hidden;
     z-index: 1001;
-    background-color: #7d7d7d
+    background-color: rgba(232, 236, 237, 1);
 }
 html.oldie .section-hero {
     width: 1024px;
