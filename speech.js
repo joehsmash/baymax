@@ -1,4 +1,4 @@
-var nigelRef = new Firebase("https://rliu42.firebaseio.com/nigel");
+var baymaxRef = new Firebase("https://rliu42.firebaseio.com/baymax");
 var firstLoad = true;
 var isSpeaking = false;
 var isSleeping = false;
@@ -82,7 +82,7 @@ var speak = function(phrase, followup, command) {
     speechSynthesis.speak(BAYMAX);
 }
 
-nigelRef.on("value", function(ss) {
+baymaxRef.on("value", function(ss) {
     var data = ss.val();
     if (firstLoad && https) { try{ setUpRecognition() } catch(e) {} }
     if (data.sms && !firstLoad) {

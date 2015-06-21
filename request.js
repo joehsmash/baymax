@@ -4,6 +4,9 @@ sendRequest = function(input) {
 		type: "POST",
 		success: function(data) {
 			console.log(data);
+		},
+		error: function(info) {
+			console.log("ERROR: " + info);
 		}
 	});
 }

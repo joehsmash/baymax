@@ -13,11 +13,7 @@ setUpRecognition = function() {
 		if (transcript && !isSleeping) {
 			startBeep.play();
 			console.log("Sending to server: " + transcript);
-			if ( /(localhost|runpengliu)/.test(location.href) ) {
-				processSpeech(transcript.trim());
-			} else {
-				sendRequest(transcript.trim())
-			}
+			sendRequest(transcript.trim())
 		}
 	}
 	recognition.onsoundend = function(event) { 
@@ -38,7 +34,7 @@ setUpRecognition = function() {
 	recognition.start();
 }
 
-
+/*
 processSpeech = function(input) {
 	transcript = "";
 	request = {input: input, previous: previousResponse}
@@ -53,4 +49,4 @@ processSpeech = function(input) {
 			console.log("Error in processing request: " + JSON.stringify(input, null, '\t'))
 		}
 	});
-}
+} */
