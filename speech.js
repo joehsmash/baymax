@@ -16,7 +16,7 @@ var beeps = [startBeep, endBeep];
 var longPause = 2000;
 var previousResponse = {};
 
-var speak = function(phrase, followup, command) {
+var speak = function (phrase, followup, command, params) {
     var BAYMAX = new SpeechSynthesisUtterance();
     var first;
     var next;
@@ -35,86 +35,99 @@ var speak = function(phrase, followup, command) {
     if (!first || first.length > 250) {
         return;
     }
-    BAYMAX.voice = speechSynthesis.getVoices()[accent || 0];
+    BAYMAX.voice = speechSynthesis.getVoices()[params.accent || 0];
     BAYMAX.text = first;
     BAYMAX.volume = 10;
-    BAYMAX.pitch = pitch || 0.60;
-    BAYMAX.rate = 0.98;
-    if ( first.indexOf("window") > -1 ) {
+    BAYMAX.pitch = params.pitch || 0.60;
+    BAYMAX.rate = params.rate || 1.0;
+    if (first.indexOf("window") > -1) {
         BAYMAX.volume = 0;
         baymaxWindow.play();
     }
-    if ( first.indexOf("Hairy baby") > -1 ) {
+    if (first.indexOf("Hairy baby") > -1) {
         BAYMAX.volume = 0;
         hairyBaby.play();
-    } 
-    if ( /start[a-z]*( )?up/.test(first) ) {
+    }
+    if (/start[a-z]*( )?up/.test(first)) {
         console.log("Play startup sound effect.");
-    } 
-    if ( /shut[a-z]*( )?down/.test(first) ) {
+    }
+    if (/shut[a-z]*( )?down/.test(first)) {
         isSleeping = true;
-    } 
-    BAYMAX.onstart = function() {
+    }
+    BAYMAX.onstart = function () {
         isSpeaking = true;
         recognition.stop();
     }
     if (next || followup) {
-        BAYMAX.onend = function() {
-            setTimeout(function() {
-                speak(next, followup, command)
+        BAYMAX.onend = function () {
+            setTimeout(function () {
+                speak(next, followup, command, params)
             }, pauseDuration);
             if (beep) {
                 rand(beeps).play();
             }
         }
     } else {
-        BAYMAX.onend = function() {
+        BAYMAX.onend = function () {
             if (baymax) {
-             rand(beeps).play();
+                rand(beeps).play();
             }
             if (isSleeping) {
                 console.log("Play shutdown sound effect.");
             }
             isSpeaking = false;
-            if (location.href.match(/^https/)) {try {recognition.start()} catch(e) {}}
+            if (https) {
+                try {
+                    recognition.start()
+                } catch (e) {}
+            }
         }
     }
     speechSynthesis.speak(BAYMAX);
 }
 
-baymaxRef.on("value", function(ss) {
+baymaxRef.on("value", function (ss) {
     var data = ss.val();
-    if (firstLoad && https) { try{ setUpRecognition() } catch(e) {} }
-    if (data.sms && !firstLoad) {
+    if (firstLoad && https) {
+        try {
+            setUpRecognition()
+        } catch (e) {}
+    }
+    if (!firstLoad) {
         previousResponse = data;
         processResponse(data);
     }
     firstLoad = false;
-}, function(error) {
+}, function (error) {
     console.log("Firebase error: " + error);
 });
 
-var processResponse = function(result) {
-    if (result.cmd.voice) {
-        accent = (result.cmd.voice == "british") ? 2 : (result.cmd.voice == "spanish") ? 3 : (result.cmd.voice == "french") ? 4 : 0;
-    } else {
-        accent = 0;
+var processResponse = function (result) {
+    var speechParams = {}
+    if (result.cmd && result.cmd.voice) {
+        speechParams.accent = (result.cmd.voice == "british") ? 2 : (result.cmd.voice ==
+            "spanish") ? 3 : (result.cmd.voice == "french") ? 4 : 0;
     }
     if (result.res && https && !isSleeping) {
-        speak(result.res, result.followup);
+        speak(result.res, result.followup, result.cmd, speechParams);
     }
     if (result.media) {
         if (result.media.type == "video") {
-            var url = ( https ? 'https': 'http' ) + "://www.youtube.com/embed/" + result.media.link + "?autoplay=1&start=3&controls=0&iv_load_policy=3&modestbranding=1";
+            var url = (https ? 'https' : 'http') +
+                "://www.youtube.com/embed/" + result.media.link +
+                "?autoplay=1&start=3&controls=0&iv_load_policy=3&modestbranding=1";
             $("#player").attr("src", url);
         }
         if (result.media.type == "map") {
-            var url = result.media.link.replace(/^http(s)?/, ( https ? 'https': 'http' ));
+            var url = result.media.link.replace(/^http(s)?/, (https ?
+                'https' : 'http'));
             $("#googlemap").attr("src", result.media.link);
         }
     }
     if (result.cmd) {
-        try{ processCommand(result.cmd) } catch(e) {}
+        try {
+            processCommand(result.cmd)
+        } catch (e) {}
     }
 }
 

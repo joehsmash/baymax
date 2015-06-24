@@ -1,6 +1,6 @@
 var transcript = "";
 var recognition = new webkitSpeechRecognition();
-var startup = /b(a|e)y( )?max( |$)/
+var startup = /b.*?y.*?max/i
 setUpRecognition = function() {
 	//recognition.continuous = false;
 	//recognition.interimResults = false;
@@ -10,9 +10,9 @@ setUpRecognition = function() {
 	recognition.onresult = function(event) {
 		transcript = event.results[event.results.length-1][0].transcript
 		isSleeping = isSleeping ? !startup.test(transcript) : false 
+		console.log(transcript);
 		if (transcript && !isSleeping) {
 			startBeep.play();
-			console.log("Sending to server: " + transcript);
 			sendRequest(transcript.trim())
 		}
 	}
@@ -22,13 +22,13 @@ setUpRecognition = function() {
 	recognition.onend = function(event) {
 		setTimeout(function() {
 			if (https && !isSpeaking) {
-				try {event.target.start()} catch(e) {}
+				try {event.target.start()} catch(e) {console.log(e)}
 			}
-		}, 1000);
+		}, 750);
 	}
 	recognition.onerror = function(event) {
 		if (https) {
-			try {event.target.start()} catch(e) {}
+			try {event.target.start()} catch(e) {console.log(e)}
 		}
 	}
 	recognition.start();
