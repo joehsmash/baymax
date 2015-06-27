@@ -48,10 +48,13 @@ var speak = function (phrase, followup, command, params) {
         BAYMAX.volume = 0;
         hairyBaby.play();
     }
-    if (/start[a-z]*( )?up/.test(first)) {
+    if (first.length == 1) {
+        BAYMAX.volume = 0;
+    }
+    if (/start.*?up/.test(first)) {
         console.log("Play startup sound effect.");
     }
-    if (/shut[a-z]*( )?down/.test(first)) {
+    if (/shut.*?down/.test(first)) {
         isSleeping = true;
     }
     BAYMAX.onstart = function () {
@@ -61,7 +64,7 @@ var speak = function (phrase, followup, command, params) {
     if (next || followup) {
         BAYMAX.onend = function () {
             setTimeout(function () {
-                speak(next, followup, command, params)
+                speak(next, followup, command, params);
             }, pauseDuration);
             if (beep) {
                 rand(beeps).play();
@@ -78,7 +81,7 @@ var speak = function (phrase, followup, command, params) {
             isSpeaking = false;
             if (https) {
                 try {
-                    recognition.start()
+                    recognition.start();
                 } catch (e) {}
             }
         }
@@ -90,7 +93,7 @@ baymaxRef.on("value", function (ss) {
     var data = ss.val();
     if (firstLoad && https) {
         try {
-            setUpRecognition()
+            setUpRecognition();
         } catch (e) {}
     }
     if (!firstLoad) {
@@ -103,7 +106,7 @@ baymaxRef.on("value", function (ss) {
 });
 
 var processResponse = function (result) {
-    var speechParams = {}
+    var speechParams = {accent: 0};
     if (result.cmd && result.cmd.voice) {
         speechParams.accent = (result.cmd.voice == "british") ? 2 : (result.cmd.voice ==
             "spanish") ? 3 : (result.cmd.voice == "french") ? 4 : 0;
@@ -111,7 +114,7 @@ var processResponse = function (result) {
     if (result.res && https && !isSleeping) {
         speak(result.res, result.followup, result.cmd, speechParams);
     }
-    if (result.media) {
+    if (result.media & !baymax) {
         if (result.media.type == "video") {
             var url = (https ? 'https' : 'http') +
                 "://www.youtube.com/embed/" + result.media.link +
@@ -124,9 +127,9 @@ var processResponse = function (result) {
             $("#googlemap").attr("src", result.media.link);
         }
     }
-    if (result.cmd) {
+    if (result.cmd && !baymax) {
         try {
-            processCommand(result.cmd)
+            processCommand(result.cmd);
         } catch (e) {}
     }
 }

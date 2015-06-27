@@ -1,9 +1,7 @@
 var transcript = "";
 var recognition = new webkitSpeechRecognition();
-var startup = /b.*?y.*?max/i
+var startup = /ma(cs|x)/i
 setUpRecognition = function() {
-	//recognition.continuous = false;
-	//recognition.interimResults = false;
 	recognition.onstart = function(event) {
 		console.log("recognition started");
 	}
@@ -26,27 +24,5 @@ setUpRecognition = function() {
 			}
 		}, 750);
 	}
-	recognition.onerror = function(event) {
-		if (https) {
-			try {event.target.start()} catch(e) {console.log(e)}
-		}
-	}
 	recognition.start();
 }
-
-/*
-processSpeech = function(input) {
-	transcript = "";
-	request = {input: input, previous: previousResponse}
-	$.ajax('/demand', {
-		type: "POST",
-		dataType : "json",
-		data: request,
-		success: function(response) {
-			console.log("Response from server: " + JSON.stringify(response, null, '\t'));
-		},
-		error: function(info) {
-			console.log("Error in processing request: " + JSON.stringify(input, null, '\t'))
-		}
-	});
-} */
