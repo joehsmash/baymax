@@ -1,6 +1,6 @@
 var transcript = "";
 var recognition = new webkitSpeechRecognition();
-var startup = /ma(cs|x)/i
+var startup = /.*?ma(cs|x)/i
 setUpRecognition = function() {
 	recognition.onstart = function(event) {
 		console.log("recognition started");
