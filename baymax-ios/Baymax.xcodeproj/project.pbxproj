@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		290207C01B46185100775FB4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290207BF1B46185100775FB4 /* AVFoundation.framework */; };
+		290207C41B467B7900775FB4 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C11B467B7900775FB4 /* Roboto-Light.ttf */; };
+		290207C51B467B7900775FB4 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C21B467B7900775FB4 /* Roboto-Medium.ttf */; };
+		290207C61B467B7900775FB4 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C31B467B7900775FB4 /* Roboto-Thin.ttf */; };
+		29E385D91B4598A000798910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E385D81B4598A000798910 /* AppDelegate.swift */; };
+		29E385DC1B4598A000798910 /* Baymax.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29E385DA1B4598A000798910 /* Baymax.xcdatamodeld */; };
+		29E385DE1B4598A000798910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E385DD1B4598A000798910 /* ViewController.swift */; };
+		29E385E11B4598A000798910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E385DF1B4598A000798910 /* Main.storyboard */; };
+		29E385E31B4598A000798910 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E385E21B4598A000798910 /* Images.xcassets */; };
+		29E385E61B4598A000798910 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29E385E41B4598A000798910 /* LaunchScreen.xib */; };
+		29E385F21B4598A000798910 /* BaymaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E385F11B4598A000798910 /* BaymaxTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29E385EC1B4598A000798910 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29E385CB1B4598A000798910 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29E385D21B4598A000798910;
+			remoteInfo = Baymax;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		290207BF1B46185100775FB4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		290207C11B467B7900775FB4 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../Downloads/roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
+		290207C21B467B7900775FB4 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../Downloads/roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		290207C31B467B7900775FB4 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../Downloads/roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		29E385D31B4598A000798910 /* Baymax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baymax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E385D71B4598A000798910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29E385D81B4598A000798910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29E385DB1B4598A000798910 /* Baymax.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Baymax.xcdatamodel; sourceTree = "<group>"; };
+		29E385DD1B4598A000798910 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29E385E01B4598A000798910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29E385E21B4598A000798910 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		29E385E51B4598A000798910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		29E385EB1B4598A000798910 /* BaymaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaymaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E385F01B4598A000798910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29E385F11B4598A000798910 /* BaymaxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaymaxTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29E385D01B4598A000798910 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				290207C01B46185100775FB4 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29E385E81B4598A000798910 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		290207C71B46F30600775FB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				290207C11B467B7900775FB4 /* Roboto-Light.ttf */,
+				290207C21B467B7900775FB4 /* Roboto-Medium.ttf */,
+				290207C31B467B7900775FB4 /* Roboto-Thin.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29E385CA1B4598A000798910 = {
+			isa = PBXGroup;
+			children = (
+				290207BF1B46185100775FB4 /* AVFoundation.framework */,
+				29E385D51B4598A000798910 /* Baymax */,
+				29E385EE1B4598A000798910 /* BaymaxTests */,
+				29E385D41B4598A000798910 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29E385D41B4598A000798910 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29E385D31B4598A000798910 /* Baymax.app */,
+				29E385EB1B4598A000798910 /* BaymaxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29E385D51B4598A000798910 /* Baymax */ = {
+			isa = PBXGroup;
+			children = (
+				29E385DD1B4598A000798910 /* ViewController.swift */,
+				29E385DF1B4598A000798910 /* Main.storyboard */,
+				29E385E21B4598A000798910 /* Images.xcassets */,
+				290207C71B46F30600775FB4 /* Resources */,
+				29E385E41B4598A000798910 /* LaunchScreen.xib */,
+				29E385DA1B4598A000798910 /* Baymax.xcdatamodeld */,
+				29E385D61B4598A000798910 /* Supporting Files */,
+			);
+			path = Baymax;
+			sourceTree = "<group>";
+		};
+		29E385D61B4598A000798910 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29E385D81B4598A000798910 /* AppDelegate.swift */,
+				29E385D71B4598A000798910 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29E385EE1B4598A000798910 /* BaymaxTests */ = {
+			isa = PBXGroup;
+			children = (
+				29E385F11B4598A000798910 /* BaymaxTests.swift */,
+				29E385EF1B4598A000798910 /* Supporting Files */,
+			);
+			path = BaymaxTests;
+			sourceTree = "<group>";
+		};
+		29E385EF1B4598A000798910 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				29E385F01B4598A000798910 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29E385D21B4598A000798910 /* Baymax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29E385F51B4598A000798910 /* Build configuration list for PBXNativeTarget "Baymax" */;
+			buildPhases = (
+				29E385CF1B4598A000798910 /* Sources */,
+				29E385D01B4598A000798910 /* Frameworks */,
+				29E385D11B4598A000798910 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Baymax;
+			productName = Baymax;
+			productReference = 29E385D31B4598A000798910 /* Baymax.app */;
+			productType = "com.apple.product-type.application";
+		};
+		29E385EA1B4598A000798910 /* BaymaxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29E385F81B4598A000798910 /* Build configuration list for PBXNativeTarget "BaymaxTests" */;
+			buildPhases = (
+				29E385E71B4598A000798910 /* Sources */,
+				29E385E81B4598A000798910 /* Frameworks */,
+				29E385E91B4598A000798910 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29E385ED1B4598A000798910 /* PBXTargetDependency */,
+			);
+			name = BaymaxTests;
+			productName = BaymaxTests;
+			productReference = 29E385EB1B4598A000798910 /* BaymaxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29E385CB1B4598A000798910 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Runpeng Liu";
+				TargetAttributes = {
+					29E385D21B4598A000798910 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					29E385EA1B4598A000798910 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 29E385D21B4598A000798910;
+					};
+				};
+			};
+			buildConfigurationList = 29E385CE1B4598A000798910 /* Build configuration list for PBXProject "Baymax" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29E385CA1B4598A000798910;
+			productRefGroup = 29E385D41B4598A000798910 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29E385D21B4598A000798910 /* Baymax */,
+				29E385EA1B4598A000798910 /* BaymaxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29E385D11B4598A000798910 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				290207C51B467B7900775FB4 /* Roboto-Medium.ttf in Resources */,
+				29E385E11B4598A000798910 /* Main.storyboard in Resources */,
+				290207C61B467B7900775FB4 /* Roboto-Thin.ttf in Resources */,
+				29E385E61B4598A000798910 /* LaunchScreen.xib in Resources */,
+				290207C41B467B7900775FB4 /* Roboto-Light.ttf in Resources */,
+				29E385E31B4598A000798910 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29E385E91B4598A000798910 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29E385CF1B4598A000798910 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E385DE1B4598A000798910 /* ViewController.swift in Sources */,
+				29E385D91B4598A000798910 /* AppDelegate.swift in Sources */,
+				29E385DC1B4598A000798910 /* Baymax.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29E385E71B4598A000798910 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29E385F21B4598A000798910 /* BaymaxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29E385ED1B4598A000798910 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29E385D21B4598A000798910 /* Baymax */;
+			targetProxy = 29E385EC1B4598A000798910 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		29E385DF1B4598A000798910 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29E385E01B4598A000798910 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		29E385E41B4598A000798910 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29E385E51B4598A000798910 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29E385F31B4598A000798910 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29E385F41B4598A000798910 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29E385F61B4598A000798910 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Baymax/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		29E385F71B4598A000798910 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Baymax/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		29E385F91B4598A000798910 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BaymaxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baymax.app/Baymax";
+			};
+			name = Debug;
+		};
+		29E385FA1B4598A000798910 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BaymaxTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Baymax.app/Baymax";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29E385CE1B4598A000798910 /* Build configuration list for PBXProject "Baymax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E385F31B4598A000798910 /* Debug */,
+				29E385F41B4598A000798910 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29E385F51B4598A000798910 /* Build configuration list for PBXNativeTarget "Baymax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E385F61B4598A000798910 /* Debug */,
+				29E385F71B4598A000798910 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29E385F81B4598A000798910 /* Build configuration list for PBXNativeTarget "BaymaxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29E385F91B4598A000798910 /* Debug */,
+				29E385FA1B4598A000798910 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		29E385DA1B4598A000798910 /* Baymax.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				29E385DB1B4598A000798910 /* Baymax.xcdatamodel */,
+			);
+			currentVersion = 29E385DB1B4598A000798910 /* Baymax.xcdatamodel */;
+			path = Baymax.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 29E385CB1B4598A000798910 /* Project object */;
+}
