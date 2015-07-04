@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Baymax View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BaymaxViewController" customModule="Baymax" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView opaque="NO" contentMode="scaleToFill" mediaPlaybackRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSW-ld-dTM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" indicatorStyle="white" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZO-td-nTp">
+                                <rect key="frame" x="16" y="28" width="568" height="541"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZZO-td-nTp" firstAttribute="centerX" secondItem="vSW-ld-dTM" secondAttribute="centerX" id="6qi-Xp-JUu"/>
+                            <constraint firstItem="ZZO-td-nTp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="9rg-Mc-8Z1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vSW-ld-dTM" secondAttribute="bottom" id="ByX-Ro-IHf"/>
+                            <constraint firstItem="vSW-ld-dTM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="T83-px-H5h"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZZO-td-nTp" secondAttribute="bottom" constant="31" id="ZeW-KE-Ag4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vSW-ld-dTM" secondAttribute="trailing" constant="-16" id="aHU-GR-0gk"/>
+                            <constraint firstItem="vSW-ld-dTM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="g6Q-Qz-gFa"/>
+                            <constraint firstItem="ZZO-td-nTp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sYW-XX-qEL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userInput" destination="ZZO-td-nTp" id="JmM-YF-tet"/>
+                        <outlet property="webView" destination="vSW-ld-dTM" id="nv9-GB-f6l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="-141"/>
+        </scene>
+    </scenes>
+</document>
