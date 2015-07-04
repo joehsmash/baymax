@@ -11,6 +11,8 @@
 		290207C41B467B7900775FB4 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C11B467B7900775FB4 /* Roboto-Light.ttf */; };
 		290207C51B467B7900775FB4 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C21B467B7900775FB4 /* Roboto-Medium.ttf */; };
 		290207C61B467B7900775FB4 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C31B467B7900775FB4 /* Roboto-Thin.ttf */; };
+		2940A2BE1B4867CF00CA0FF7 /* baymax_button_200.png in Resources */ = {isa = PBXBuildFile; fileRef = 2940A2BC1B4867CF00CA0FF7 /* baymax_button_200.png */; };
+		2940A2C01B48782800CA0FF7 /* baymax_button_filled_200.png in Resources */ = {isa = PBXBuildFile; fileRef = 2940A2BF1B48782800CA0FF7 /* baymax_button_filled_200.png */; };
 		29E385D91B4598A000798910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E385D81B4598A000798910 /* AppDelegate.swift */; };
 		29E385DC1B4598A000798910 /* Baymax.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29E385DA1B4598A000798910 /* Baymax.xcdatamodeld */; };
 		29E385DE1B4598A000798910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E385DD1B4598A000798910 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 		290207C11B467B7900775FB4 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../Downloads/roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
 		290207C21B467B7900775FB4 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../Downloads/roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		290207C31B467B7900775FB4 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../Downloads/roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		2940A2BC1B4867CF00CA0FF7 /* baymax_button_200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baymax_button_200.png; path = ../../../baymax_button_200.png; sourceTree = "<group>"; };
+		2940A2BF1B48782800CA0FF7 /* baymax_button_filled_200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baymax_button_filled_200.png; path = ../../../baymax_button_filled_200.png; sourceTree = "<group>"; };
 		29E385D31B4598A000798910 /* Baymax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baymax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E385D71B4598A000798910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29E385D81B4598A000798910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,11 +74,29 @@
 		290207C71B46F30600775FB4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2940A2C21B487A9200CA0FF7 /* Graphics */,
+				2940A2C11B487A8A00CA0FF7 /* Fonts */,
 				290207C11B467B7900775FB4 /* Roboto-Light.ttf */,
 				290207C21B467B7900775FB4 /* Roboto-Medium.ttf */,
 				290207C31B467B7900775FB4 /* Roboto-Thin.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		2940A2C11B487A8A00CA0FF7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		2940A2C21B487A9200CA0FF7 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				2940A2BF1B48782800CA0FF7 /* baymax_button_filled_200.png */,
+				2940A2BC1B4867CF00CA0FF7 /* baymax_button_200.png */,
+			);
+			name = Graphics;
 			sourceTree = "<group>";
 		};
 		29E385CA1B4598A000798910 = {
@@ -219,7 +241,9 @@
 			files = (
 				290207C51B467B7900775FB4 /* Roboto-Medium.ttf in Resources */,
 				29E385E11B4598A000798910 /* Main.storyboard in Resources */,
+				2940A2BE1B4867CF00CA0FF7 /* baymax_button_200.png in Resources */,
 				290207C61B467B7900775FB4 /* Roboto-Thin.ttf in Resources */,
+				2940A2C01B48782800CA0FF7 /* baymax_button_filled_200.png in Resources */,
 				29E385E61B4598A000798910 /* LaunchScreen.xib in Resources */,
 				290207C41B467B7900775FB4 /* Roboto-Light.ttf in Resources */,
 				29E385E31B4598A000798910 /* Images.xcassets in Resources */,

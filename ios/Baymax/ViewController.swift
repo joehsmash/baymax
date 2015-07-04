@@ -9,12 +9,12 @@
 import UIKit
 import Foundation
 import AVFoundation
-import Darwin
 
 class BaymaxViewController: UIViewController, UITextViewDelegate, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var userInput: UITextView!
+    @IBOutlet weak var startButton: UIButton!
     
     //let synth = AVSpeechSynthesizer()
     //var reply = AVSpeechUtterance(string: "")
@@ -22,19 +22,17 @@ class BaymaxViewController: UIViewController, UITextViewDelegate, UIWebViewDeleg
     //var defaultPitch = Float(0.85)
     
     var requestURL = "http://72.29.29.198:1337/"
-    var viewURL = "http://72.29.29.198/baymax"
+    var requestObj = NSURLRequest(URL: NSURL(string: "http://72.29.29.198/baymax")!)
     
     override func viewDidLoad() {
+        baymaxRequest("Baymax, startup.")
         super.viewDidLoad()
         UIView.setAnimationsEnabled(false)
-        // Do any additional setup after loading the view, typically from a nib.
-        let url = NSURL (string: viewURL)
-        let requestObj = NSURLRequest(URL: url!)
+        self.startButton.hidden = true
         self.webView.delegate = self
         self.webView.loadRequest(requestObj)
         self.webView.scrollView.bounces = false
-        baymaxRequest("Baymax, startup.")
-        
+
         self.userInput.delegate = self
     }
     
@@ -48,11 +46,27 @@ class BaymaxViewController: UIViewController, UITextViewDelegate, UIWebViewDeleg
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        self.startButton.hidden = false
         self.userInput.editable = true
-        //self.userInput.becomeFirstResponder()
         self.userInput.font = UIFont(name: "Roboto-Light", size: 24)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "changeInputMode:", name: UITextInputCurrentInputModeDidChangeNotification, object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+    }
+    
+    @IBAction func toggleKeyboard(sender: UIButton) {
+        self.userInput.text = ""
+        self.userInput.becomeFirstResponder()
+    }
+    
+    func rotated() {
+        if UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation) {
+            self.userInput.becomeFirstResponder()
+            self.startButton.hidden = true
+        } else if UIDeviceOrientationIsPortrait(UIDevice.currentDevice().orientation) {
+            self.startButton.hidden = false
+        }
     }
     
     func textViewDidChange(textView: UITextView) {
@@ -62,6 +76,7 @@ class BaymaxViewController: UIViewController, UITextViewDelegate, UIWebViewDeleg
             if lastChar == "\n" {
                 baymaxRequest(s.substringToIndex(advance(s.startIndex, count(s) - 1)))
                 self.userInput.text = "";
+                self.userInput.endEditing(true)
             }
         }
     }
@@ -109,8 +124,6 @@ class BaymaxViewController: UIViewController, UITextViewDelegate, UIWebViewDeleg
             }
         }
     }
-
-    
 
 }
 
