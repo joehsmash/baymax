@@ -18,10 +18,9 @@
   </body>
   
   <script>
-    if (!/^https:/.test(location.href)) {
-      location.href = location.href.replace(/^http:/, "https:").replace("72.29.29.198", "runpengliu.com");
-    } else {
-      speak(" ", "", "", "");
+    speak(" ", "", "", "");
+    document.ontouchmove = function(e) {
+      e.preventDefault();
     }
   </script>
 
