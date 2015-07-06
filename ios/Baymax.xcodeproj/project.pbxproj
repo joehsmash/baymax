@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		290207C01B46185100775FB4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290207BF1B46185100775FB4 /* AVFoundation.framework */; };
-		290207C41B467B7900775FB4 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C11B467B7900775FB4 /* Roboto-Light.ttf */; };
-		290207C51B467B7900775FB4 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C21B467B7900775FB4 /* Roboto-Medium.ttf */; };
-		290207C61B467B7900775FB4 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 290207C31B467B7900775FB4 /* Roboto-Thin.ttf */; };
-		2940A2BE1B4867CF00CA0FF7 /* baymax_button_200.png in Resources */ = {isa = PBXBuildFile; fileRef = 2940A2BC1B4867CF00CA0FF7 /* baymax_button_200.png */; };
-		2940A2C01B48782800CA0FF7 /* baymax_button_filled_200.png in Resources */ = {isa = PBXBuildFile; fileRef = 2940A2BF1B48782800CA0FF7 /* baymax_button_filled_200.png */; };
+		2940A2C51B48933900CA0FF7 /* baymax_button_200.png in Resources */ = {isa = PBXBuildFile; fileRef = 2940A2C31B48933900CA0FF7 /* baymax_button_200.png */; };
+		2940A2C61B48933900CA0FF7 /* baymax_button_filled_200.png in Resources */ = {isa = PBXBuildFile; fileRef = 2940A2C41B48933900CA0FF7 /* baymax_button_filled_200.png */; };
+		29DD40321B48E6470076EB5F /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DD40311B48E6470076EB5F /* NSManagedObject.swift */; };
 		29E385D91B4598A000798910 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E385D81B4598A000798910 /* AppDelegate.swift */; };
 		29E385DC1B4598A000798910 /* Baymax.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 29E385DA1B4598A000798910 /* Baymax.xcdatamodeld */; };
 		29E385DE1B4598A000798910 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E385DD1B4598A000798910 /* ViewController.swift */; };
@@ -34,11 +32,9 @@
 
 /* Begin PBXFileReference section */
 		290207BF1B46185100775FB4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		290207C11B467B7900775FB4 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Light.ttf"; path = "../../../../Downloads/roboto/Roboto-Light.ttf"; sourceTree = "<group>"; };
-		290207C21B467B7900775FB4 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Medium.ttf"; path = "../../../../Downloads/roboto/Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		290207C31B467B7900775FB4 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Thin.ttf"; path = "../../../../Downloads/roboto/Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		2940A2BC1B4867CF00CA0FF7 /* baymax_button_200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baymax_button_200.png; path = ../../../baymax_button_200.png; sourceTree = "<group>"; };
-		2940A2BF1B48782800CA0FF7 /* baymax_button_filled_200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baymax_button_filled_200.png; path = ../../../baymax_button_filled_200.png; sourceTree = "<group>"; };
+		2940A2C31B48933900CA0FF7 /* baymax_button_200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baymax_button_200.png; path = Resources/Graphics/baymax_button_200.png; sourceTree = "<group>"; };
+		2940A2C41B48933900CA0FF7 /* baymax_button_filled_200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = baymax_button_filled_200.png; path = Resources/Graphics/baymax_button_filled_200.png; sourceTree = "<group>"; };
+		29DD40311B48E6470076EB5F /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		29E385D31B4598A000798910 /* Baymax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baymax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E385D71B4598A000798910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29E385D81B4598A000798910 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,11 +70,9 @@
 		290207C71B46F30600775FB4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				29DD40331B498D270076EB5F /* Sounds */,
 				2940A2C21B487A9200CA0FF7 /* Graphics */,
 				2940A2C11B487A8A00CA0FF7 /* Fonts */,
-				290207C11B467B7900775FB4 /* Roboto-Light.ttf */,
-				290207C21B467B7900775FB4 /* Roboto-Medium.ttf */,
-				290207C31B467B7900775FB4 /* Roboto-Thin.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -93,15 +87,23 @@
 		2940A2C21B487A9200CA0FF7 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				2940A2BF1B48782800CA0FF7 /* baymax_button_filled_200.png */,
-				2940A2BC1B4867CF00CA0FF7 /* baymax_button_200.png */,
+				2940A2C31B48933900CA0FF7 /* baymax_button_200.png */,
+				2940A2C41B48933900CA0FF7 /* baymax_button_filled_200.png */,
 			);
 			name = Graphics;
+			sourceTree = "<group>";
+		};
+		29DD40331B498D270076EB5F /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		29E385CA1B4598A000798910 = {
 			isa = PBXGroup;
 			children = (
+				29DD40311B48E6470076EB5F /* NSManagedObject.swift */,
 				290207BF1B46185100775FB4 /* AVFoundation.framework */,
 				29E385D51B4598A000798910 /* Baymax */,
 				29E385EE1B4598A000798910 /* BaymaxTests */,
@@ -239,13 +241,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				290207C51B467B7900775FB4 /* Roboto-Medium.ttf in Resources */,
+				2940A2C61B48933900CA0FF7 /* baymax_button_filled_200.png in Resources */,
 				29E385E11B4598A000798910 /* Main.storyboard in Resources */,
-				2940A2BE1B4867CF00CA0FF7 /* baymax_button_200.png in Resources */,
-				290207C61B467B7900775FB4 /* Roboto-Thin.ttf in Resources */,
-				2940A2C01B48782800CA0FF7 /* baymax_button_filled_200.png in Resources */,
+				2940A2C51B48933900CA0FF7 /* baymax_button_200.png in Resources */,
 				29E385E61B4598A000798910 /* LaunchScreen.xib in Resources */,
-				290207C41B467B7900775FB4 /* Roboto-Light.ttf in Resources */,
 				29E385E31B4598A000798910 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E385DE1B4598A000798910 /* ViewController.swift in Sources */,
+				29DD40321B48E6470076EB5F /* NSManagedObject.swift in Sources */,
 				29E385D91B4598A000798910 /* AppDelegate.swift in Sources */,
 				29E385DC1B4598A000798910 /* Baymax.xcdatamodeld in Sources */,
 			);
@@ -397,6 +397,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/runpengliu/Desktop/git/SwiftyJSON/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Baymax/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -410,6 +414,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/runpengliu/Desktop/git/SwiftyJSON/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = Baymax/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
