@@ -1,10 +1,10 @@
 html {
 	width:100%; 
-   	height:100%; 
+  height:100%; 
 }
 
 body {
-	background-color: rgba(232, 236, 237, 1);
+	background-color: #FFFFFF;
 }
 
 #eyes {
@@ -16,7 +16,7 @@ body {
    margin-top: -420px;
    margin-left: -400px; /* Half the width */
    border: none;
-   background-image: url("../docs/images/baymax_eyes.gif");
+   background-image: url("../docs/images/baymax_eyes_white_lowres.gif");
 }
 
 

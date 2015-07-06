@@ -8,9 +8,10 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 var baymax = /baymax/.test(location.href);
 var https = /^https/.test(location.href);
 var startBeep = new Audio('sounds/startBeep.mp3');
-var endBeep = new Audio('sounds/endBeep.mp3');
+var endBeep = new Audio('sounds/endBeep.ogg');
 var baymaxWindow = new Audio('sounds/window.mp3');
-var hairyBaby = new Audio('sounds/hairybaby.mp3');
+var hairyBaby = new Audio('sounds/hairybaby.ogg');
+var balala = new Audio('sounds/balala.ogg');
 endBeep.volume = 0.6;
 startBeep.volume = 0.6;
 var accent = 0;
@@ -50,6 +51,11 @@ var speak = function (phrase, followup, command, params) {
     if (first.indexOf("Hairy baby") > -1) {
         BAYMAX.volume = 0;
         hairyBaby.play();
+    }
+    if (first.indexOf("Balala") > -1) {
+        BAYMAX.volume = 0;
+        balala.play();
+        return;
     }
     if (first.length == 1 || isMobile) {
         BAYMAX.volume = 0;
