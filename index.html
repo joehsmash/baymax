@@ -6,15 +6,27 @@
   <link rel="stylesheet" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type='text/javascript' src='https://cdn.firebase.com/js/client/2.2.7/firebase.js'></script>
-  <script src="js/utils.js"></script>
   <script src="js/request.js"></script>
   <script src="js/constructor.js"></script>
   <script src="js/speech.js"></script>
   <script src="js/recognition.js"></script>
+  <script src="js/utils.js"></script>
 </head>
 
-  <body oncontextmenu="return false">
+  <body>
     <div id="eyes"></div>
+    <div id="wave"></div>
+    <script src="js/wave.js"></script>
+    <script>
+      var wave = new SiriWave({
+        container: document.getElementById('wave'),
+        width: $(window).width()*0.99,
+        height: $(window).height()*(isMobile ? 0.10 : 0.15),
+        speed: 0.025,
+        color: '#BBB',
+        frequency: 1.5
+      });
+    </script>
   </body>
   
   <script>
@@ -23,5 +35,4 @@
       e.preventDefault();
     }
   </script>
-
 </html>

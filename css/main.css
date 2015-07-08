@@ -11,14 +11,35 @@ body {
    position: absolute;
    top: 50%;
    left: 50%;
-   width: 800px;
-   height: 600px;
-   margin-top: -420px;
-   margin-left: -400px; /* Half the width */
+   background-size: 900px 675px;
+   width: 900px;
+   height: 675px;
+   margin-top: -480px;
+   margin-left: -450px; /* Half the width */
    border: none;
-   background-image: url("../docs/images/baymax_eyes_white_lowres.gif");
+   background-image: url("https://runpengliu.com/baymax/docs/images/baymax_blink_sequence.gif");
 }
 
+#wave {
+  position: absolute;
+  margin: 0;
+  width: 99%;
+  height: 20%;
+  top: 75%;
+}
+
+
+/** Large screen **/ 
+
+@media (min-height: 960px) and (min-width: 1200px) {
+  #eyes {
+      background-size: 1200px 900px;
+      width: 1200px;
+      height: 900px;
+      margin-top: -650px;
+      margin-left: -600px; /* Half the width */
+  }
+}
 
 /** Landscape **/
 
@@ -28,20 +49,12 @@ body {
       width: 520px;
       height: 390px;
       margin-left: -260px; /* Half the width */
-      background-image: url("../docs/images/baymax_eyes_white_lowres.gif");
-  }
-  body {
-    background-color: #FFFFFF;
   }
 }
 
 @media(max-height: 420px) {
   #eyes {
     margin-top: -320px;
-    background-image: url("../docs/images/baymax_eyes_white_lowres.gif");
-  }
-  body {
-    background-color: #FFFFFF;
   }
 }
 
@@ -68,6 +81,10 @@ body {
       height: 315px;
       margin-top: -82.5%;
       margin-left: -210px; /* Half the width */
+  }
+  #wave {
+    height: 20%;
+    top: 85%;
   }
 }
 
