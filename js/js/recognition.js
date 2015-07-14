@@ -1,7 +1,6 @@
 var transcript = "";
 var recognition = new webkitSpeechRecognition();
-var startup = /.*?(ma(cs|x)|jarvis|siri)/i
-var listenForStopPlay = /stop|play/i
+var startup = /.*?ma(cs|x)/i
 setUpRecognition = function() {
 	recognition.onstart = function(event) {
 		console.log("recognition started");
@@ -11,14 +10,8 @@ setUpRecognition = function() {
 		isSleeping = isSleeping ? !startup.test(transcript) : false 
 		console.log(transcript);
 		if (transcript && !isSleeping) {
-			if (isPlayingMusic) {
-				if (listenForStopPlay.test(transcript)) {
-					sendRequest(transcript.replace(/.*?(stop|play)(.*?)/, "$1$2").trim());
-				}
-			} else {
-				BEEP.Baymax.play();
-				sendRequest(transcript.trim())
-			}
+			startBeep.play();
+			sendRequest(transcript.trim())
 		}
 	}
 	recognition.onsoundend = function(event) { 

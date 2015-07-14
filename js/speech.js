@@ -14,24 +14,40 @@ const ACTIVATE = new Audio('sounds/activate.mp3');
 const DEACTIVATE = new Audio('sounds/deactivate.mp3');
 const SLEEP = new Audio("sounds/sleep.mp3");
 const SCAN = new Audio("sounds/scan.mp3");
-const SPEAKING = new Audio("sounds/speaking_2.ogg");
 const WINDOW = new Audio('sounds/window.ogg');
 const BABY = new Audio('sounds/hairybaby.ogg');
 const BALALA = new Audio('sounds/balala.ogg');
 const GOODBYE = new Audio('sounds/goodbye.ogg');
 const FEEL_BETTER = new Audio('sounds/feelbetter.mp3');
-var startBeep = new Audio('sounds/startBeep.mp3');
-startBeep.volume = 0.5;
-var beeps = [startBeep];
 
-/* Baymax speech variables */
-var accent = 0;
-var pitch = 0.5;
-var longPause = 2500;
+const ENTITY = {
+    Baymax: "Baymax",
+    Siri: "Siri",
+    Jarvis: "Jarvis"
+}
+const SPEAKING = {
+    Baymax: new Audio("sounds/speaking_baymax.ogg"),
+    Jarvis: new Audio("sounds/speaking_jarvis.ogg")
+}
+const BEEP = {
+    Baymax: new Audio("sounds/beep_baymax.ogg"),
+    Jarvis: new Audio("sounds/beep_jarvis.ogg"),
+    Siri: new Audio("sounds/beep_siri.ogg")
+}
+
+/* Baymax speech constants */
+const DEFAULTS = {
+    entity: ENTITY.Baymax,
+    accent: 0,
+    pitch: 0.5,
+    rate: 1.0,
+    volume: 10,
+    longPause: 2500 // ms
+}
 var previousResponse = {};
 
 var speak = function (phrase, followup, command, params) {
-    var BAYMAX = new SpeechSynthesisUtterance();
+    var UTTERANCE = new SpeechSynthesisUtterance();
     var first;
     var next;
     var pauseDuration = 0;
@@ -44,97 +60,104 @@ var speak = function (phrase, followup, command, params) {
         next = followup;
         followup = "";
         beep = true;
-        pauseDuration = longPause;
+        pauseDuration = DEFAULTS.longPause;
     }
     if (!first || first.length > 250) {
         return;
     }
-    BAYMAX.voice = speechSynthesis.getVoices()[params.accent || 0];
-    BAYMAX.text = first;
-    BAYMAX.volume = 10;
-    BAYMAX.pitch = params.pitch || 0.5;
-    BAYMAX.rate = params.rate || 1.0;
+    UTTERANCE.voice = speechSynthesis.getVoices()[params.accent || DEFAULTS.accent];
+    UTTERANCE.text = first;
+    UTTERANCE.volume = DEFAULTS.volume;
+    UTTERANCE.pitch = params.pitch || DEFAULTS.pitch;
+    UTTERANCE.rate = params.rate || DEFAULTS.rate;
+    var entity = params.entity || DEFAULTS.entity;
     if (first.length == 1 || isMobile) {
-        BAYMAX.volume = 0;
+        UTTERANCE.volume = 0;
     }
-    if (first.indexOf("jumped out a window") > -1) {
-        BAYMAX.volume = 0;
-        beep = false;
-        WINDOW.play();
+    if (entity == ENTITY.Baymax) {
+        if (/jumped out a window/.test(first)) {
+            UTTERANCE.volume = 0;
+            beep = false;
+            WINDOW.play();
+        }
+        if (/hairy baby/i.test(first)) {
+            UTTERANCE.volume = 0;
+            beep = false;
+            BABY.play();
+        }
+        if (/balala/i.test(first)) {
+            UTTERANCE.volume = 0;
+            beep = false;
+            BALALA.play();
+            return;
+        }
+        if (/feel.*?better/.test(first)) {
+            UTTERANCE.volume = 0;
+            FEEL_BETTER.play();
+            return;
+        }
+        if (/deactivate/.test(first)) {
+            UTTERANCE.volume = 0;
+            DEACTIVATE.play();
+            SPEAKING[entity].play();
+        }
+        if (/scan complete/i.test(first)) {
+            UTTERANCE.volume = 0;
+            SCAN.play();
+        }
+        if (/glad i can help/i.test(first)) {
+            UTTERANCE.volume = 0;
+            GOODBYE.play();
+            SPEAKING[entity].play();
+        }
+        if (/startup/.test(command)) {
+            ACTIVATE.play();
+        }
+        if (/shut.*?down/.test(first)) {
+            isSleeping = true;
+        }
     }
-    if (first.indexOf("Hairy baby") > -1) {
-        BAYMAX.volume = 0;
-        beep = false;
-        BABY.play();
-    }
-    if (first.indexOf("Balala") > -1) {
-        BAYMAX.volume = 0;
-        beep = false;
-        BALALA.play();
-        return;
-    }
-    if (/feel.*?better/.test(first)) {
-        BAYMAX.volume = 0;
-        FEEL_BETTER.play();
-        return;
-    }
-    if (/deactivate/.test(first)) {
-        BAYMAX.volume = 0;
-        DEACTIVATE.play();
-        SPEAKING.play();
-    }
-    if (/scan complete/i.test(first)) {
-        BAYMAX.volume = 0;
-        SCAN.play();
-    }
-    if (/glad i can help/i.test(first)) {
-        BAYMAX.volume = 0;
-        GOODBYE.play();
-        SPEAKING.play();
-    }
-    if (command == "startup") {
-        ACTIVATE.play();
-    }
-    if (/shut.*?down/.test(first)) {
-        isSleeping = true;
-    }
-    BAYMAX.onstart = function () {
+    UTTERANCE.onstart = function () {
         wave.start(); $("#wave").fadeIn();
         isSpeaking = true;
         recognition.stop();
-        if (BAYMAX.volume > 0) {
-            SPEAKING.play();
+        if (UTTERANCE.volume > 0 && Math.random() > 0.5) {
+            try {
+                SPEAKING[entity].play();
+            } catch(e) {}
         }
     }
     if (next || followup) {
-        BAYMAX.onend = function () {
+        UTTERANCE.onend = function () {
             setTimeout(function () {
                 speak(next, followup, command, params);
             }, pauseDuration);
             if (beep) {
-                rand(beeps).play();
+                BEEP[entity].play();
             }
-            $("#wave").fadeOut(); wave.stop(); 
+            $("#wave").fadeOut(1000, function(){wave.stop();}); 
         }
     } else {
-        BAYMAX.onend = function () {
+        UTTERANCE.onend = function () {
             if (baymax && beep) {
-                rand(beeps).play();
+                BEEP[entity].play();
             }
             if (isSleeping) {
                 SLEEP.play();
             }
-            SPEAKING.pause();
+            try {
+                SPEAKING[entity].pause();
+            } catch(e) {}
             isSpeaking = false;
-            $("#wave").fadeOut(); wave.stop(); 
-            if (https && !isPlayingMusic) {
+            $("#wave").fadeOut(1000, function(){wave.stop();}); 
+            if (https) {
                 try {
                     recognition.start();
                 } catch (e) {}
             }
         }
     }
-    speechSynthesis.speak(BAYMAX);
+    speechSynthesis.speak(UTTERANCE);
 }
 
 baymaxRef.on("value", function (ss) {
@@ -151,8 +174,9 @@ baymaxRef.on("value", function (ss) {
         wave.start(); 
         $("#wave").fadeIn();
         setTimeout(function() {
-            $("#wave").fadeOut(); 
-            wave.stop();
+            $("#wave").fadeOut(750, function(){
+                 wave.stop();
+            }); 
         }, 3000);
     }
     firstLoad = false;
@@ -163,28 +187,29 @@ baymaxRef.on("value", function (ss) {
 var processResponse = function (result) {
     var speechParams = {};
     if (result.command && result.command.voice) {
-        speechParams.accent = (result.command.voice == "british") ? 2 : (result.command.voice ==
-            "spanish") ? 3 : (result.command.voice == "french") ? 4 : 0;
-        speechParams.pitch = result.command.voice.pitch || 0.5;
-        speechParams.rate = result.command.voice.rate || 1.0;
+        speechParams.accent = result.command.voice.accent;
+        speechParams.pitch = result.command.voice.pitch;
+        speechParams.rate = result.command.voice.rate;
+        speechParams.entity = result.command.voice.entity;
     }
-    if (result.command == "startup") {
+    if (/startup/.test(result.command)) {
         isSleeping = false;
     }
     if (result.response.speech && https && !isSleeping) {
         speak(result.response.speech, result.response.followup, result.command, speechParams);
-    }
+    } else if (/startup/.test(result.command)) {
+         location.reload(true);
+    } 
     if (result.media) {
         if (result.media.type == "video") {
             isPlayingMusic = true;
+            wave.start(); $("#wave").fadeIn(); 
             clearTimeouts();
-            setTimeout(function(){recognition.start(); isPlayingMusic = false;}, 120000);
         }
     }
     if (result.command == "stop") {
         isPlayingMusic = false;
         clearTimeouts();
-        try {recognition.start()} catch(e) {};
     }
 }
 
